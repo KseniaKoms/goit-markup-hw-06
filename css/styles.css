@@ -586,19 +586,50 @@ img {
   border-radius: 4px;
 }
 
-.user input:focus,
-.form-field textarea:focus {
-  outline: solid 1px var(--accent-color);
-  border: 1px solid var(--accent-color);
-  box-sizing: border-box;
-  border-radius: 4px;
+.user label {
+  position: relative;
+  display: block;
+  margin-bottom: 4px;
+
+  color: var(--primary-text-color);
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
-.user input:checked,
-.form-field textarea:checked {
-  border: 1px solid var(--accent-color);
-  box-sizing: border-box;
-  border-radius: 4px;
+.name,
+.phone,
+.mail {
+  position: relative;
+}
+
+.name-icon {
+  position: absolute;
+  top: 29px;
+  left: 12px;
+}
+
+.phone-icon {
+  position: absolute;
+  top: 29px;
+  left: 12px;
+}
+
+.mail-icon {
+  position: absolute;
+  top: 29px;
+  left: 12px;
+}
+
+.user input:focus + .name-icon,
+.user input:focus + .phone-icon,
+.user input:focus + .mail-icon {
+  fill: var(--accent-color);
+}
+
+.feedback label {
+  display: block;
+  margin-bottom: 4px;
 }
 
 .form-field textarea {
@@ -615,51 +646,37 @@ img {
   border-radius: 4px;
 }
 
-.form-field textarea::placeholder {
+.feedback label {
+  color: var(--primary-text-color);
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.form-field textarea::placeholder {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.user label {
-  display: block;
-  margin-bottom: 4px;
+.user input:focus,
+.form-field textarea:focus {
+  outline: solid 1px var(--accent-color);
+  border: 1px solid var(--accent-color);
+  box-sizing: border-box;
+  background-size: cover;
+  border-radius: 4px;
 }
 
-.name,
-.phone,
-.mail {
-  position: relative;
-}
-
-.name-icon {
-  position: absolute;
-  top: 32px;
-  left: 15px;
-}
-
-.phone-icon {
-  position: absolute;
-  top: 34px;
-  left: 14px;
-}
-
-.mail-icon {
-  position: absolute;
-  top: 32px;
-  left: 14px;
-}
-
-.user input:focus + .name-icon,
-.user input:focus + .phone-icon,
-.user input:focus + .mail-icon {
-  fill: var(--accent-color);
-}
-
-.feedback label {
-  display: block;
-  margin-bottom: 4px;
+.user input:checked,
+.form-field textarea:checked {
+  border: 1px solid var(--accent-color);
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .checkbox {
@@ -699,7 +716,7 @@ img {
 .checkbox:checked + .not-checked {
   background-image: url(../images/cheked-icon.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: 50% 50%;
   background-color: var(--accent-color);
   border: var(--accent-color);
 }
@@ -749,7 +766,7 @@ img {
   align-items: baseline;
 }
 .footer-contacts {
-  margin-right: 70px;
+  margin-right: 98px;
 }
 
 .logotype {
@@ -858,8 +875,10 @@ address {
 }
 
 .form-subscribe input {
-  width: 358px;
+  min-width: 358px;
   height: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
 
   margin-right: 12px;
   padding: 0;
@@ -873,7 +892,8 @@ address {
 
 .form-subscribe input:focus {
   outline: none;
-  background-color: #fff;
+  color: var(--primary-text-color);
+  background-color: #ffffff;
 }
 
 .form-subscribe button {
